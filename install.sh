@@ -1,6 +1,11 @@
 #!/bin/bash
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+echo "Pulling new version of containers"
+docker pull alexeyraga/arm-consul
+docker pull alexeyraga/arm-registrator
+
 echo "Installing services in ${DIR}"
 
 sed -i 's|$BASE_DIR|'${DIR}'|g' ${DIR}/consul/consul.service
