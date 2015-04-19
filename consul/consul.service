@@ -6,6 +6,7 @@ Requires=docker.sercice
 [Service]           
 ExecStart=$BASE_DIR/consul/start.sh
 ExecStop=/usr/bin/docker stop consul
+ExecStopPost=/usr/bin/docker rm consul
 
         
 [Install]       

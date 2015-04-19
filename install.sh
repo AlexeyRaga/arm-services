@@ -11,5 +11,5 @@ systemctl enable ${DIR}/registrator/registrator.service
 
 echo "Services enabled."
 echo "To start manually run:"
-echo systemctl start ${DIR}/consul/consul.service
-echo systemctl start ${DIR}/registrator/registrator.service
+echo systemctl start consul.service
+echo systemctl start registrator.service

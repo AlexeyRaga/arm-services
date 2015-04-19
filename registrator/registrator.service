@@ -7,6 +7,7 @@ Requires=docker.sercice
 [Service]           
 ExecStart=$BASE_DIR/registrator/start.sh
 ExecStop=/usr/bin/docker stop registrator
+ExecStopPost=/usr/bin/docker rm registrator
 
         
 [Install]       
