@@ -1,0 +1,13 @@
+[Unit]  
+Description=Registrator Docker container  
+Wants=consul.service         
+After=consul.service
+Requires=docker.sercice
+        
+[Service]           
+ExecStart=$BASE_DIR/registrator/start.sh
+ExecStop=/usr/bin/docker stop registrator
+
+        
+[Install]       
+WantedBy=multi-user.target

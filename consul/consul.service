@@ -1,0 +1,12 @@
+[Unit]  
+Description=Consul Docker container           
+After=docker.service
+Requires=docker.sercice
+        
+[Service]           
+ExecStart=$BASE_DIR/consul/start.sh
+ExecStop=/usr/bin/docker stop consul
+
+        
+[Install]       
+WantedBy=multi-user.target
