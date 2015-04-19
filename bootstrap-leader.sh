@@ -2,7 +2,7 @@
 
 public_ip="$(ip ro | awk '/^default/{print $9}')"
 
-docker run -d --name consul -h $HOSTNAME \
+docker run --rm --name consul -h $HOSTNAME \
     -v /mnt/consul:/data \
     -p 8300:8300 \
     -p 8301:8301 -p 8301:8301/udp \
