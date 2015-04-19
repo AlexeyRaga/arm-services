@@ -34,6 +34,9 @@ and the services can be started as usual
     systemctl start consul
     systemctl start registrator
 
-or just reboot the machine, the services should start automatically.
+#### Disclaimer
+
+The services are `enabled` in `systemd` so they should be starting on boot, but it doesn't happen and due to my lack of experience with `systemd` I cannot tell why. 
+`systemctl is-enabled consul; echo $?` tells me that the service is enabled, yet it does not automatically start :(
 
 The consul UI can be found at **http://[your-ip]:8500/ui**
