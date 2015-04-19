@@ -1,13 +1,14 @@
-[Unit]  
-Description=Consul Docker container           
-After=docker.service
+[Unit]
+Description=Consul Docker container
+Wants=network-online.target
+After=network-online.target docker.service
 Requires=docker.service
-        
-[Service]           
+
+[Service]
 ExecStart=$BASE_DIR/consul/start.sh
 ExecStop=/usr/bin/docker stop consul
 ExecStopPost=/usr/bin/docker rm consul
 
-        
-[Install]       
+
+[Install]
 WantedBy=multi-user.target

@@ -11,6 +11,7 @@ echo "Installing services in ${DIR}"
 sed -i 's|$BASE_DIR|'${DIR}'|g' ${DIR}/consul/consul.service
 sed -i 's|$BASE_DIR|'${DIR}'|g' ${DIR}/registrator/registrator.service
 
+systemctl enable systemd-networkd-wait-online.service
 systemctl enable ${DIR}/consul/consul.service
 systemctl enable ${DIR}/registrator/registrator.service
 
