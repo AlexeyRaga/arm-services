@@ -7,7 +7,7 @@ SystemD services for arm cluster (consul, registrator, etc)
     cd arm-services
     ./install.sh
 
-Services will be created and enabled, ready to start.
+Services will be created and enabled, _ready to start_, but **not** started automatically.
 
 :exclamation: Don't forget to bootstrap consul cluster!
 
@@ -23,6 +23,8 @@ They can be used as:
     #on all the other machines
     ./bootstrap-join.sh -join 192.168.1.151 -join 192.168.1.152 -join 192.168.1.153 -join 192.168.1.154
 
+Obviously use your IP addresses in `-join` parameter, and use as many machines as you want to join the cluster :)
+
 It does not matter whoch machine you choose as "leader" while bootstrapping, the `consul` specifics is that there should be one. After all the machines join the cluster just shop consul containers:
 
     docker stop consul
@@ -31,3 +33,7 @@ and the services can be started as usual
 
     systemctl start consul
     systemctl start registrator
+
+or just reboot the machine, the services should start automatically.
+
+The consul UI can be found at **http://[your-ip]:8500/ui**
