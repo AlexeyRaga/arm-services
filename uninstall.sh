@@ -3,7 +3,6 @@
 echo "Uninstalling services"
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-echo "Installing services in ${DIR}"
 
 systemctl stop registrator
 systemctl stop consul
